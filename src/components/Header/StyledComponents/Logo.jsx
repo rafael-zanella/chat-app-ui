@@ -9,6 +9,7 @@ const Logo = styled.div`
     width: 50px;
     height: 50px;
     padding: 10px;
+    padding-left: 0;
   }
 
   h1{

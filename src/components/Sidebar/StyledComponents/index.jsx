@@ -13,10 +13,11 @@ const Item = styled.li`
   display: flex;
   align-items: center;
   cursor: pointer;
+  column-gap: 10px;
   
   section {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 100%;
   }
   
@@ -59,8 +60,8 @@ const Box = styled.ul`
 const Container = styled.div`
   background-color: ${theme.primary};
   max-width: 350px;
-  height: calc(100vh - ${theme.headerSize});
-  padding: 20px;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   row-gap: 20px;

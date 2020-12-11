@@ -16,7 +16,6 @@ const Container = styled.header`
   justify-content: space-between;
   align-items: center;
   background-color: ${theme.primary};
-  padding: 5px 15px;
   height: ${theme.headerSize};
 `;
 
