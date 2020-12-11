@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Logo from './Logo'
 import Nav from './Nav';
+import { theme } from "../../../themes/theme";
 
 
 const ExtraItems = styled.div`
@@ -14,10 +15,11 @@ const Container = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #4D426D;
+  background-color: ${theme.primary};
   padding: 5px 15px;
+  height: ${theme.headerSize};
 `;
- 
+
 export { Logo };
 export { Nav };
 export { ExtraItems };
