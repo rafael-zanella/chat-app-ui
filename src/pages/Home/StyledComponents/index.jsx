@@ -4,7 +4,7 @@ import {theme} from "../../../themes/theme";
 const Main = styled.main`
   background-color: ${theme.primary};
   width: 100%;
-  height: calc(100% - ${theme.headerSize});
+  height: calc(100% - ${theme.headerSize} - 20px);
   display: flex;
   box-sizing: border-box;
   column-gap: 20px;
@@ -22,6 +22,7 @@ const Page = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 20px;
+  overflow-y: hidden;
 `;
 
 const Container = styled.div`
