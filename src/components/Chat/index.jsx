@@ -1,5 +1,10 @@
-import Container from "./StyledComponents";
+import Container, { TypeArea } from "./StyledComponents";
 import Message from "../Message";
+import { useEffect, useRef } from "react";
+import Input from "../../components/Input/Input"
+import Button from "../../components/Button/Button"
+import { ReactComponent as SmileIcon } from "../../assets/icons/smile.svg";
+import { ReactComponent as SendIcon } from "../../assets/icons/send.svg";
 
 const loggedAccountMock = 'gabriel@email.com';
 
@@ -56,6 +61,9 @@ const messagesMock = [
 ];
 
 const Chat = ({ messages = messagesMock, loggedAccount = loggedAccountMock }) => {
+
+  const chatArea = useRef();
+
   const getTimeFromTimestamp = (timestamp) => {
     return timestamp.slice(-7, -2).toLowerCase();
   }
@@ -80,9 +88,13 @@ const Chat = ({ messages = messagesMock, loggedAccount = loggedAccountMock }) =>
     return email === loggedAccount;
   }
 
+  useEffect(() => {
+    chatArea.current.scrollTop = chatArea.current.scrollHeight;
+  })
+
   return (
     <Container>
-      <section>
+      <section ref={chatArea}>
         {
           messages.map((msg, index) => {
             const { picture, name, email, timestamp, message } = msg;
@@ -101,6 +113,21 @@ const Chat = ({ messages = messagesMock, loggedAccount = loggedAccountMock }) =>
           })
         }
       </section>
+
+      <TypeArea>
+        <Input 
+          background='#FFFFFF' 
+          width='90%'
+          height='60px' 
+          placeholder='Type a message'
+          showIcon="true"
+          Icon={SmileIcon}
+          padding="0 25px"
+        />
+        
+        <Button width="60px" height="60px" background="#3CC6B7" Icon={SendIcon} />
+      </TypeArea>
+
     </Container>
   )
 };

@@ -3,17 +3,19 @@ import PropTypes from 'prop-types'
 import Container from './StyledComponentes';
 
 
-const Input = ({ width, height, type, placeholder, showIcon, icon, fontColor }) => {
-
-  const Icon = () => showIcon && icon
+const Input = ({ width, height, type, placeholder, showIcon, Icon, fontColor, background, padding }) => {
 
   return (
-    <div>
-      <Container width={width} height={height} fontColor={fontColor}>
-        <Icon />
-        <input type={type} placeholder={placeholder}/>
-      </Container>
-    </div>
+    <Container 
+      width={width} 
+      height={height} 
+      fontColor={fontColor} 
+      background={background}
+      padding={padding}
+    >
+      { showIcon && <Icon /> }
+      <input type={type} placeholder={placeholder}/>
+    </Container>
   )
 }
 
@@ -23,8 +25,19 @@ Input.propTypes = {
   height: PropTypes.string,
   type: PropTypes.string,
   placeholder: PropTypes.string,
-  icon: PropTypes.element,
+  Icon: PropTypes.element,
   fontColor: PropTypes.string,
+  padding: PropTypes.string,
+}
+
+Input.defaultProps = {
+  showIcon: false,
+  width: '200px',
+  height: '30px',
+  type: 'text',
+  placeholder: 'placeholder',
+  background: '#5C4F82',
+  padding: '0 15px',
 }
 
 export default Input

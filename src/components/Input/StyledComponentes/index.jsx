@@ -7,9 +7,9 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   column-gap: 10px;
-  background-color: #5C4F82;
+  background-color: ${({ background }) => background};
   border-radius: 50px;
-  padding: 0 15px;
+  padding: ${({ padding }) => padding};
   position: relative;
   
   svg {
