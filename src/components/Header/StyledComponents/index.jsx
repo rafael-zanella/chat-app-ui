@@ -9,6 +9,21 @@ const ExtraItems = styled.div`
   justify-content: flex-end;
   align-items: center;
   column-gap: 30px;
+
+  
+  svg {
+    :nth-child(1) {
+      width: 20px;
+      height: 20px;
+    }
+    
+    :nth-child(2) {
+      fill: white;
+      width: 22px;
+      height: 22px;
+    }
+  }
+
 `;
 
 const Container = styled.header`

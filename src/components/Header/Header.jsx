@@ -3,7 +3,7 @@ import React from 'react'
 import Container, { ExtraItems, Logo, Nav, Search } from './StyledComponents';
 import { ReactComponent as LogoIcon } from '../../assets/icons/logo.svg';
 import { ReactComponent as SearchIcon } from '../../assets/icons/search.svg';
-import { ReactComponent as NotificationIcon } from '../../assets/icons/notification_outline.svg';
+import { ReactComponent as NotificationIcon } from '../../assets/icons/bell.svg';
 
 export default function Header() {
   return (
